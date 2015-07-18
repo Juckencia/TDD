@@ -1,0 +1,41 @@
+//Se le dice como se va a construir, script de la aplicación, tiene mucha configuración
+apply plugin:'java'
+apply plugin:'jacoco'
+
+//Encoding con que se compila 
+//[compileJava,compileTestJava]*.options.encoding = 'ISO-8859-1'
+
+//Compatibilidad con las versiones de java
+sourceCompatibility=1.7
+targetCompatibility=1.7
+
+//Estandares
+sourceSets{
+	main{
+		java{
+			srcDir 'src'		
+		}	
+	}
+	test{
+		java{
+			srcDir 'tests'		
+		}	
+	}
+}
+//agregar librerias desde mavencentral
+
+repositories{
+	mavenCentral()
+}
+
+dependencies{
+	compile 'junit:junit:4.11'
+}
+test{
+	jacoco{
+		toolVersion='0.7.1.201405082137'
+		destinationFile=file("build/jacoco/jacoco.exec")
+		
+	}
+}
+
