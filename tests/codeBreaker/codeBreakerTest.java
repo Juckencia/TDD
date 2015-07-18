@@ -34,7 +34,7 @@ public class codeBreakerTest {
 	@Test
 	public void combinado() {
 		resultado = breaker.comparar("6587", "5687");
-		assertEquals("XX__", resultado);
+		assertEquals("XXX_", resultado);
 	}
 	
 	@Test
